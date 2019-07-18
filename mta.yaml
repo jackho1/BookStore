@@ -1,3 +1,16 @@
 ID: BookStore
 _schema-version: '2.1'
 version: 0.0.1
+
+modules:
+ - name: booksdb
+   type: hdb
+   path: booksdb
+   requires:
+    - name: hdi_booksdb
+
+resources:
+ - name: hdi_booksdb
+   properties:
+      hdi-container-name: ${service-name}
+   type: com.sap.xs.hdi-container

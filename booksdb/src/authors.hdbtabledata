@@ -1,0 +1,11 @@
+{ 
+  "format_version": 1, 
+  "imports": 
+  [ { 
+		"target_table": "BookStore.booksdb::store.Author", 
+		"source_data" : { "data_type" : "CSV", "file_name" : "BookStore.booksdb::authors.csv", "has_header" : true }, 
+		"import_settings" : { "import_columns" : ["authorId", "authorName", "numberOfBooks" ] }, 
+		"column_mappings" : {"authorId": 1, "authorName" : 2, "numberOfBooks" : 3 	} 
+	} 
+  ] 
+}

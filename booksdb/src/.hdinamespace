@@ -1,0 +1,5 @@
+{
+    "name":    "BookStore.booksdb",
+    "cascade":   false,
+    "subfolder": "append"
+}

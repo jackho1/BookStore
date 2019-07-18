@@ -9,6 +9,15 @@ modules:
    requires:
     - name: hdi_booksdb
 
+
+ - name: booksjs
+   type: nodejs
+   path: booksjs
+   provides:
+    - name: booksjs_api
+      properties:
+         url: ${default-url}
+
 resources:
  - name: hdi_booksdb
    properties:

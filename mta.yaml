@@ -1,25 +1,29 @@
 ID: BookStore
 _schema-version: '2.1'
 version: 0.0.1
-
 modules:
- - name: booksdb
-   type: hdb
-   path: booksdb
-   requires:
-    - name: hdi_booksdb
-
-
- - name: booksjs
-   type: nodejs
-   path: booksjs
-   provides:
-    - name: booksjs_api
-      properties:
-         url: ${default-url}
-
+  - name: booksdb
+    type: hdb
+    path: booksdb
+    requires:
+      - name: hdi_booksdb
+  - name: booksjs
+    type: nodejs
+    path: booksjs
+    provides:
+      - name: booksjs_api
+        properties:
+          url: '${default-url}'
+    requires:
+      - name: UAA-service
+      - name: booksdb
+      - name: hdi_booksdb
 resources:
- - name: hdi_booksdb
-   properties:
-      hdi-container-name: ${service-name}
-   type: com.sap.xs.hdi-container
+  - name: hdi_booksdb
+    properties:
+      hdi-container-name: '${service-name}'
+    type: com.sap.xs.hdi-container
+  - name: UAA-service
+    type: com.sap.xs.uaa-space
+    parameters:
+      config-path: ./xs-security.json

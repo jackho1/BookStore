@@ -1,0 +1,17 @@
+{
+  "xsappname": "BookStore",
+  "scopes": [
+    {
+      "name": "$XSAPPNAME.USER",
+      "description": "BookStore User"
+    }
+  ],
+  "role-templates": [
+    {
+      "name": "BookStore",
+      "scope-references": [
+        "$XSAPPNAME.USER"
+      ]
+    }
+  ]
+}

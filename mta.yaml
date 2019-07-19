@@ -18,6 +18,17 @@ modules:
       - name: UAA-service
       - name: booksdb
       - name: hdi_booksdb
+
+  - name: booksui
+    type: html5
+    path: booksui
+    requires:
+     - name: booksjs_api
+       group: destinations
+       properties:
+          name: booksjs_be
+          url: ~{url}
+
 resources:
   - name: hdi_booksdb
     properties:
